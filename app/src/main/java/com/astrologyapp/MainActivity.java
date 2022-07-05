@@ -25,7 +25,6 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.time.Year;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvdate, tvtime;
     ImageView date, time;
     Button btn_submit;
-    EditText edt_fname, edt_mname, edt_lname, edt_email, edt_pin;
+    EditText edt_fname, edt_mname, edt_lname, edt_email, edt_pin,edt_Add;
     RadioGroup radioGroup;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
@@ -76,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
         //time
         hour = calendar.get(Calendar.HOUR);
         minute = calendar.get(Calendar.MINUTE);
+
+        //Address
+        edt_Add = findViewById(R.id.edit_text);
         onClickListener();
 
 
@@ -133,15 +135,16 @@ public class MainActivity extends AppCompatActivity {
                 String strMn = edt_mname.getText().toString();
                 String strLn = edt_lname.getText().toString();
                 String strEmail = edt_email.getText().toString();
+                String strAdd = edt_Add.getText().toString();
                 int SelectedId = radioGroup.getCheckedRadioButtonId();
-                validation(strFn,strMn,strLn,strEmail,SelectedId);
+                validation(strFn,strMn,strLn,strEmail,SelectedId,strAdd);
 
             }
         });
 
     }
 
-    private void validation(String strFn, String strMn, String strLn, String strEmail, int selectedId) {
+    private void validation(String strFn, String strMn, String strLn, String strEmail, int selectedId, String StrAdd) {
 
         if (strFn.equals("")) {
             Toast.makeText(MainActivity.this, "Please enter first Name", Toast.LENGTH_SHORT).show();
@@ -155,10 +158,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Please enter valid Email", Toast.LENGTH_SHORT).show();
         } else if (selectedId == -1) {
             Toast.makeText(MainActivity.this, "Please Select Gender", Toast.LENGTH_SHORT).show();
-        } else if (year > 2022 || year <= 1921) {
+        } else if (year > 2022 || year <= 1921 ) {
             Toast.makeText(MainActivity.this, "Please Enter Valid Birth Year", Toast.LENGTH_SHORT).show();
         } else if (edt_pin.length() > 6 || edt_pin.length() < 6 || edt_pin.length() == 0) {
             Toast.makeText(MainActivity.this, "Please Enter Valid Pincode", Toast.LENGTH_SHORT).show();
+        }else if (StrAdd.equals("")) {
+            Toast.makeText(MainActivity.this, "Please Enter Address", Toast.LENGTH_SHORT).show();
         } else {
 
 

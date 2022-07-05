@@ -5,33 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/galaxy"
     android:gravity="center"
     >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Tv_pData"
-        android:textColor="#FF0000"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        >
-
-
-    </TextView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_time"
-        android:textColor="#FF0000"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_date"
-        android:textColor="#FF0000"
-        android:textStyle="bold"
-        android:textSize="20dp"
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#46FF9800"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/bg"
+        android:dividerHeight="2dp"
+        android:id="@+id/list_view"
         />
 </LinearLayout>
