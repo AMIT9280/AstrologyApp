@@ -20,13 +20,36 @@ String url = null;
         int index = i.getIntExtra("KEY_DATA",0);
 
         if (index == 0){
-
-            webView.loadUrl("https://www.bhaskar.com/rashifal/1/today/");
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.getSettings().setLoadsImagesAutomatically(true);
-            webView.setWebViewClient(new Mywebview());
-
+            url = "https://www.astrosage.com/horoscope/daily-aries-horoscope.asp";
+        }else if(index==1){
+            url = "https://www.astrosage.com/horoscope/daily-taurus-horoscope.asp";
+        }else if(index==2){
+            url = "https://www.astrosage.com/horoscope/daily-gemini-horoscope.asp";
+        }else if(index==3){
+            url = "https://www.astrosage.com/horoscope/daily-gemini-horoscope.asp";
+        }else if(index==4){
+            url = "https://www.astrosage.com/horoscope/daily-leo-horoscope.asp";
+        }else if(index==5){
+            url = "https://www.astrosage.com/horoscope/daily-virgo-horoscope.asp";
+        }else if(index==6){
+            url = "https://www.astrosage.com/horoscope/daily-libra-horoscope.asp";
+        }else if(index==7){
+            url = "https://www.astrosage.com/horoscope/daily-scorpio-horoscope.asp";
+        }else if(index==8){
+            url = "https://www.astrosage.com/horoscope/daily-sagittarius-horoscope.asp";
+        }else if(index==9){
+            url = "https://www.astrosage.com/horoscope/daily-capricorn-horoscope.asp";
+        }else if(index==10){
+            url = "https://www.astrosage.com/horoscope/daily-aquarius-horoscope.asp";
+        }else if(index==11){
+            url = "https://www.astrosage.com/horoscope/daily-pisces-horoscope.asp";
         }
+
+
+        webView.loadUrl(url);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setLoadsImagesAutomatically(true);
+        webView.setWebViewClient(new Mywebview());
 
     }
 

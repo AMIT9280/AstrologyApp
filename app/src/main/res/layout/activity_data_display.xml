@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/galaxy"
+    android:padding="10dp"
     android:gravity="center"
     >
     <ImageView
@@ -19,10 +20,8 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="#46FF9800"
-        android:layout_marginHorizontal="20dp"
-        android:background="@drawable/bg"
-        android:dividerHeight="2dp"
         android:id="@+id/list_view"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="20dp"
         />
 </LinearLayout>
